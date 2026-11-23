@@ -1,0 +1,836 @@
+[
+{
+"kelurahan": "CIBADAK",
+"kecamatan": "BANYUMANIK",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "CIBADAK",
+"kecamatan": "BUAH BATU",
+"kota": "KOTA BANDUNG",
+"kode_pos": "40111"
+},
+{
+"kelurahan": "CIBADAK",
+"kecamatan": "CILANDAK",
+"kota": "DKI JAKARTA",
+"kode_pos": "12110"
+},
+{
+"kelurahan": "CIBADAK",
+"kecamatan": "CILEDUG",
+"kota": "KOTA TANGERANG",
+"kode_pos": "15111"
+},
+{
+"kelurahan": "CIBADAK",
+"kecamatan": "DENPASAR BARAT",
+"kota": "KOTA DENPASAR",
+"kode_pos": "80111"
+},
+{
+"kelurahan": "CIBADAK",
+"kecamatan": "DENPASAR TIMUR",
+"kota": "KOTA DENPASAR",
+"kode_pos": "80111"
+},
+{
+"kelurahan": "CIBADAK",
+"kecamatan": "GUNUNG PUTRI",
+"kota": "KABUPATEN BOGOR",
+"kode_pos": "16918"
+},
+{
+"kelurahan": "CIBADAK",
+"kecamatan": "KARAWACI",
+"kota": "KOTA TANGERANG",
+"kode_pos": "15111"
+},
+{
+"kelurahan": "CIBADAK",
+"kecamatan": "RUNGKUT",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "CIBADAK",
+"kecamatan": "SUKOLILO",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "CIBADAK",
+"kecamatan": "TAPOS",
+"kota": "KOTA DEPOK",
+"kode_pos": "16424"
+},
+{
+"kelurahan": "CIBADAK",
+"kecamatan": "TEMBALANG",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "CIBADAK",
+"kecamatan": "WONOKROMO",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "ANTAPANI",
+"kota": "KOTA BANDUNG",
+"kode_pos": "40111"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "BATUCEPER",
+"kota": "KOTA TANGERANG",
+"kode_pos": "15111"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "BEJI",
+"kota": "KOTA DEPOK",
+"kode_pos": "16424"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "BEKASI BARAT",
+"kota": "KOTA BEKASI",
+"kode_pos": "17141"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "BUAH BATU",
+"kota": "KOTA BANDUNG",
+"kode_pos": "40111"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "CIBINONG",
+"kota": "KABUPATEN BOGOR",
+"kode_pos": "16918"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "CICENDO",
+"kota": "KOTA BANDUNG",
+"kode_pos": "40111"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "CILEDUG",
+"kota": "KOTA TANGERANG",
+"kode_pos": "15111"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "CIMANGGIS",
+"kota": "KOTA DEPOK",
+"kode_pos": "16424"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "DENPASAR TIMUR",
+"kota": "KOTA DENPASAR",
+"kode_pos": "80111"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "GAJAHMUNGKUR",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "GUBENG",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "GUNUNG PUTRI",
+"kota": "KABUPATEN BOGOR",
+"kode_pos": "16918"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "PEDURUNGAN",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "RAWALUMBU",
+"kota": "KOTA BEKASI",
+"kode_pos": "17141"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "RUNGKUT",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "SUKMAJAYA",
+"kota": "KOTA DEPOK",
+"kode_pos": "16424"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "SUKOLILO",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "TEBET",
+"kota": "DKI JAKARTA",
+"kode_pos": "12110"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "TEMBALANG",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "CIPAYUNG",
+"kecamatan": "WONOKROMO",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "HARAPAN BARU",
+"kecamatan": "CILANDAK",
+"kota": "DKI JAKARTA",
+"kode_pos": "12110"
+},
+{
+"kelurahan": "HARAPAN BARU",
+"kecamatan": "CITEUREUP",
+"kota": "KABUPATEN BOGOR",
+"kode_pos": "16918"
+},
+{
+"kelurahan": "HARAPAN BARU",
+"kecamatan": "DENPASAR BARAT",
+"kota": "KOTA DENPASAR",
+"kode_pos": "80111"
+},
+{
+"kelurahan": "HARAPAN BARU",
+"kecamatan": "GUBENG",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "HARAPAN BARU",
+"kecamatan": "GUNUNG PUTRI",
+"kota": "KABUPATEN BOGOR",
+"kode_pos": "16918"
+},
+{
+"kelurahan": "HARAPAN BARU",
+"kecamatan": "JATIASIH",
+"kota": "KOTA BEKASI",
+"kode_pos": "17141"
+},
+{
+"kelurahan": "HARAPAN BARU",
+"kecamatan": "RAWALUMBU",
+"kota": "KOTA BEKASI",
+"kode_pos": "17141"
+},
+{
+"kelurahan": "HARAPAN BARU",
+"kecamatan": "SUKOLILO",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "HARAPAN BARU",
+"kecamatan": "TAPOS",
+"kota": "KOTA DEPOK",
+"kode_pos": "16424"
+},
+{
+"kelurahan": "HARAPAN BARU",
+"kecamatan": "TEBET",
+"kota": "DKI JAKARTA",
+"kode_pos": "12110"
+},
+{
+"kelurahan": "HARAPAN BARU",
+"kecamatan": "WONOKROMO",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "ANTAPANI",
+"kota": "KOTA BANDUNG",
+"kode_pos": "40111"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "BATUCEPER",
+"kota": "KOTA TANGERANG",
+"kode_pos": "15111"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "CENGKARENG",
+"kota": "DKI JAKARTA",
+"kode_pos": "12110"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "CIAWI",
+"kota": "KABUPATEN BOGOR",
+"kode_pos": "16918"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "CILANDAK",
+"kota": "DKI JAKARTA",
+"kode_pos": "12110"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "CIMANGGIS",
+"kota": "KOTA DEPOK",
+"kode_pos": "16424"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "CITEUREUP",
+"kota": "KABUPATEN BOGOR",
+"kode_pos": "16918"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "COBLONG",
+"kota": "KOTA BANDUNG",
+"kode_pos": "40111"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "DENPASAR SELATAN",
+"kota": "KOTA DENPASAR",
+"kode_pos": "80111"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "DENPASAR TIMUR",
+"kota": "KOTA DENPASAR",
+"kode_pos": "80111"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "GAJAHMUNGKUR",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "GUBENG",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "GUNUNG PUTRI",
+"kota": "KABUPATEN BOGOR",
+"kode_pos": "16918"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "JATIASIH",
+"kota": "KOTA BEKASI",
+"kode_pos": "17141"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "KARAWACI",
+"kota": "KOTA TANGERANG",
+"kode_pos": "15111"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "PEDURUNGAN",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "PONDOK GEDE",
+"kota": "KOTA BEKASI",
+"kode_pos": "17141"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "SUKMAJAYA",
+"kota": "KOTA DEPOK",
+"kode_pos": "16424"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "TAPOS",
+"kota": "KOTA DEPOK",
+"kode_pos": "16424"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "TEBET",
+"kota": "DKI JAKARTA",
+"kode_pos": "12110"
+},
+{
+"kelurahan": "KARANG ANYAR",
+"kecamatan": "TEMBALANG",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "BEJI",
+"kota": "KOTA DEPOK",
+"kode_pos": "16424"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "CIBINONG",
+"kota": "KABUPATEN BOGOR",
+"kode_pos": "16918"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "CICENDO",
+"kota": "KOTA BANDUNG",
+"kode_pos": "40111"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "CILANDAK",
+"kota": "DKI JAKARTA",
+"kode_pos": "12110"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "CIMANGGIS",
+"kota": "KOTA DEPOK",
+"kode_pos": "16424"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "CIPONDOH",
+"kota": "KOTA TANGERANG",
+"kode_pos": "15111"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "DENPASAR BARAT",
+"kota": "KOTA DENPASAR",
+"kode_pos": "80111"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "DENPASAR SELATAN",
+"kota": "KOTA DENPASAR",
+"kode_pos": "80111"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "DENPASAR TIMUR",
+"kota": "KOTA DENPASAR",
+"kode_pos": "80111"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "GUBENG",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "JATIASIH",
+"kota": "KOTA BEKASI",
+"kode_pos": "17141"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "KARAWACI",
+"kota": "KOTA TANGERANG",
+"kode_pos": "15111"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "KEBAYORAN BARU",
+"kota": "DKI JAKARTA",
+"kode_pos": "12110"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "PEDURUNGAN",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "RAWALUMBU",
+"kota": "KOTA BEKASI",
+"kode_pos": "17141"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "SUKMAJAYA",
+"kota": "KOTA DEPOK",
+"kode_pos": "16424"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "SUKOLILO",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "TAPOS",
+"kota": "KOTA DEPOK",
+"kode_pos": "16424"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "TEMBALANG",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "MEKARJAYA",
+"kecamatan": "WONOKROMO",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "SINDANGSARI",
+"kecamatan": "BANYUMANIK",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "SINDANGSARI",
+"kecamatan": "BATUCEPER",
+"kota": "KOTA TANGERANG",
+"kode_pos": "15111"
+},
+{
+"kelurahan": "SINDANGSARI",
+"kecamatan": "BEKASI BARAT",
+"kota": "KOTA BEKASI",
+"kode_pos": "17141"
+},
+{
+"kelurahan": "SINDANGSARI",
+"kecamatan": "CIBINONG",
+"kota": "KABUPATEN BOGOR",
+"kode_pos": "16918"
+},
+{
+"kelurahan": "SINDANGSARI",
+"kecamatan": "CILEDUG",
+"kota": "KOTA TANGERANG",
+"kode_pos": "15111"
+},
+{
+"kelurahan": "SINDANGSARI",
+"kecamatan": "CIMANGGIS",
+"kota": "KOTA DEPOK",
+"kode_pos": "16424"
+},
+{
+"kelurahan": "SINDANGSARI",
+"kecamatan": "CITEUREUP",
+"kota": "KABUPATEN BOGOR",
+"kode_pos": "16918"
+},
+{
+"kelurahan": "SINDANGSARI",
+"kecamatan": "DENPASAR SELATAN",
+"kota": "KOTA DENPASAR",
+"kode_pos": "80111"
+},
+{
+"kelurahan": "SINDANGSARI",
+"kecamatan": "DENPASAR TIMUR",
+"kota": "KOTA DENPASAR",
+"kode_pos": "80111"
+},
+{
+"kelurahan": "SINDANGSARI",
+"kecamatan": "GAJAHMUNGKUR",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "SINDANGSARI",
+"kecamatan": "JATIASIH",
+"kota": "KOTA BEKASI",
+"kode_pos": "17141"
+},
+{
+"kelurahan": "SINDANGSARI",
+"kecamatan": "PEDURUNGAN",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "SINDANGSARI",
+"kecamatan": "PONDOK GEDE",
+"kota": "KOTA BEKASI",
+"kode_pos": "17141"
+},
+{
+"kelurahan": "SINDANGSARI",
+"kecamatan": "RUNGKUT",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "SINDANGSARI",
+"kecamatan": "SUKOLILO",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "SINDANGSARI",
+"kecamatan": "TEMBALANG",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "ANTAPANI",
+"kota": "KOTA BANDUNG",
+"kode_pos": "40111"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "BANYUMANIK",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "BATUCEPER",
+"kota": "KOTA TANGERANG",
+"kode_pos": "15111"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "BEJI",
+"kota": "KOTA DEPOK",
+"kode_pos": "16424"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "CENGKARENG",
+"kota": "DKI JAKARTA",
+"kode_pos": "12110"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "CICENDO",
+"kota": "KOTA BANDUNG",
+"kode_pos": "40111"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "CILANDAK",
+"kota": "DKI JAKARTA",
+"kode_pos": "12110"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "CIMANGGIS",
+"kota": "KOTA DEPOK",
+"kode_pos": "16424"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "CITEUREUP",
+"kota": "KABUPATEN BOGOR",
+"kode_pos": "16918"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "COBLONG",
+"kota": "KOTA BANDUNG",
+"kode_pos": "40111"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "DENPASAR TIMUR",
+"kota": "KOTA DENPASAR",
+"kode_pos": "80111"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "GAJAHMUNGKUR",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "GUNUNG PUTRI",
+"kota": "KABUPATEN BOGOR",
+"kode_pos": "16918"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "JATIASIH",
+"kota": "KOTA BEKASI",
+"kode_pos": "17141"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "KEBAYORAN BARU",
+"kota": "DKI JAKARTA",
+"kode_pos": "12110"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "PEDURUNGAN",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "PONDOK GEDE",
+"kota": "KOTA BEKASI",
+"kode_pos": "17141"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "RUNGKUT",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "SUKOLILO",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "SUKAMAJU",
+"kecamatan": "TEMBALANG",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "SUKAMAKMUR",
+"kecamatan": "ANTAPANI",
+"kota": "KOTA BANDUNG",
+"kode_pos": "40111"
+},
+{
+"kelurahan": "SUKAMAKMUR",
+"kecamatan": "BEJI",
+"kota": "KOTA DEPOK",
+"kode_pos": "16424"
+},
+{
+"kelurahan": "SUKAMAKMUR",
+"kecamatan": "BUAH BATU",
+"kota": "KOTA BANDUNG",
+"kode_pos": "40111"
+},
+{
+"kelurahan": "SUKAMAKMUR",
+"kecamatan": "CICENDO",
+"kota": "KOTA BANDUNG",
+"kode_pos": "40111"
+},
+{
+"kelurahan": "SUKAMAKMUR",
+"kecamatan": "CILANDAK",
+"kota": "DKI JAKARTA",
+"kode_pos": "12110"
+},
+{
+"kelurahan": "SUKAMAKMUR",
+"kecamatan": "CIMANGGIS",
+"kota": "KOTA DEPOK",
+"kode_pos": "16424"
+},
+{
+"kelurahan": "SUKAMAKMUR",
+"kecamatan": "CIPONDOH",
+"kota": "KOTA TANGERANG",
+"kode_pos": "15111"
+},
+{
+"kelurahan": "SUKAMAKMUR",
+"kecamatan": "DENPASAR SELATAN",
+"kota": "KOTA DENPASAR",
+"kode_pos": "80111"
+},
+{
+"kelurahan": "SUKAMAKMUR",
+"kecamatan": "DENPASAR TIMUR",
+"kota": "KOTA DENPASAR",
+"kode_pos": "80111"
+},
+{
+"kelurahan": "SUKAMAKMUR",
+"kecamatan": "GAJAHMUNGKUR",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "SUKAMAKMUR",
+"kecamatan": "KARAWACI",
+"kota": "KOTA TANGERANG",
+"kode_pos": "15111"
+},
+{
+"kelurahan": "SUKAMAKMUR",
+"kecamatan": "KEBAYORAN BARU",
+"kota": "DKI JAKARTA",
+"kode_pos": "12110"
+},
+{
+"kelurahan": "SUKAMAKMUR",
+"kecamatan": "PEDURUNGAN",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "SUKAMAKMUR",
+"kecamatan": "RUNGKUT",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+},
+{
+"kelurahan": "SUKAMAKMUR",
+"kecamatan": "TAPOS",
+"kota": "KOTA DEPOK",
+"kode_pos": "16424"
+},
+{
+"kelurahan": "SUKAMAKMUR",
+"kecamatan": "TEMBALANG",
+"kota": "KOTA SEMARANG",
+"kode_pos": "50111"
+},
+{
+"kelurahan": "SUKAMAKMUR",
+"kecamatan": "WONOKROMO",
+"kota": "KOTA SURABAYA",
+"kode_pos": "60111"
+}
+]
