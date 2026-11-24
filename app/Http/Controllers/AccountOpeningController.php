@@ -99,13 +99,32 @@ class AccountOpeningController extends Controller
 
         return response()->json([
             'token' => $token,
-            'filename' => $name,
+            'filename' => $this->filenameFromName($name, $result, $r['values']),
             'values' => $r['values'],
             'errors' => (object)$r['errors'],
             'warnings' => (object)$r['warnings'],
             'suggest' => (object)$r['suggest'],
             'dk' => $r['dk'],
         ]);
+    }
+
+    /**
+     * Nama file tampilan = nama nasabah, tapi HANYA bila nama itu benar-benar terbaca dari APR.
+     * "Terbaca" dinilai dari hasil scan mentah (sebelum Dukcapil mengisi sel kosong): nama terisi dan tidak
+     * masuk uncertain. Kalau tidak terbaca / ragu, nama file asli dibiarkan.
+     */
+    private function filenameFromName(string $original, array $result, array $values): string
+    {
+        $readable = trim((string)($result['raw']['nama_lengkap'] ?? '')) !== ''
+            && !in_array('nama_lengkap', $result['uncertain'] ?? [], true);
+        if (!$readable) return $original;
+
+        $name = (string)($values['nama'] ?? '');
+        $name = preg_replace('/[\\\\\/:*?"<>|\x00-\x1F]+/u', ' ', $name); // karakter terlarang di nama file
+        $name = trim(preg_replace('/\s+/u', ' ', $name), " .");
+        $name = trim(mb_substr($name, 0, 80), " .");
+
+        return $name === '' ? $original : $name . '.pdf';
     }
 
     /** Validasi + lookup Dukcapil ulang untuk satu baris setelah user mengedit sel (termasuk koreksi NIK). */
