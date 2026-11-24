@@ -77,3 +77,6 @@ Alur: Upload APR -> cek/koreksi tabel -> Submit -> request berstatus **Menunggu 
 
 - Nama cabang: `PMP_BRANCH_NAME` di `.env`. Setelah update jalankan `php artisan migrate`.
 - Kode pos: `app/Services/PostalCodeLookup.php` membaca `database/sample/kodepos.json` (`kelurahan, kecamatan, kota, kode_pos`). File itu hanya data sintetis untuk dummy; untuk dipakai nyata ganti dengan data referensi resmi (mis. Pos Indonesia/Kemendagri) dengan format yang sama.
+
+## NIK tidak terbaca (2026-11-24)
+Jika NIK di APR tidak terbaca/tidak 16 digit, tabel hanya mengisi **nama** dan data khas APR (kontak, pekerjaan, jabatan, penghasilan). Kolom yang bisa dilengkapi Dukcapil (`pmp.hold_without_nik` di `config/pmp.php`: kelamin, tgl lahir, kota lahir, kota KTP, ibu kandung, status kawin, alamat, RT/RW, kode pos) dikosongkan dengan keterangan "Menunggu NIK". Setelah user mengisi NIK, kolom itu terisi dari Dukcapil. Ubah daftar kolomnya di config bila perlu.

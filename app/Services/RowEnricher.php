@@ -49,10 +49,22 @@ class RowEnricher
             }
         }
 
-        $this->fillKodepos($row, $addr, $suggest, $warn);
+        $nikOk = strlen($nik) === 16;
+        if (array_filter($addr)) $this->fillKodepos($row, $addr, $suggest, $warn);
 
         $row['_warnings'] = $warn;
         $v = RowValidator::validate($row);
+
+        // NIK belum ada: kolom yang menunggu Dukcapil tidak ditandai merah, cukup "Menunggu NIK"; kesalahan NIK tetap merah
+        if (!$nikOk) {
+            foreach (ApMapper::holdColumns() as $c) {
+                if (trim((string)($v['values'][$c] ?? '')) === '' && isset($v['errors'][$c])) {
+                    unset($v['errors'][$c]);
+                    $v['warnings'][$c] = 'Menunggu NIK, akan diisi dari Dukcapil';
+                }
+            }
+            if (isset($v['errors']['no_ktp']) && $nik === '') $v['errors']['no_ktp'] = 'NIK tidak terbaca. Isi NIK agar data dilengkapi dari Dukcapil';
+        }
 
         if ($dkMsg !== '') {
             $required = !function_exists('config') || config('pmp.dukcapil.required', true);

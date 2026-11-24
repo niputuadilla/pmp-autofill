@@ -77,6 +77,27 @@ class ApMapper
         return $row;
     }
 
+    /**
+     * NIK tidak terbaca/tidak lengkap: kosongkan kolom yang bisa dilengkapi Dukcapil (config pmp.hold_without_nik)
+     * sampai user mengisi NIK. Nama, kontak, dan kolom pekerjaan tetap dari APR.
+     *
+     * @return bool true bila ada kolom yang ditahan
+     */
+    public static function holdWithoutNik(array &$row): bool
+    {
+        if (strlen(preg_replace('/\D/', '', (string)($row['no_ktp'] ?? ''))) === 16) return false;
+        foreach (self::holdColumns() as $c) $row[$c] = '';
+        $row['_addr'] = [];
+        return true;
+    }
+
+    /** @return string[] */
+    public static function holdColumns(): array
+    {
+        $def = ['kelamin', 'tgl_lhr', 'kota_lhr', 'kota_ktp', 'ibu_kandung', 'sts_kawin', 'alamat1', 'alamat2', 'kodepos'];
+        return function_exists('config') ? (array)config('pmp.hold_without_nik', $def) : $def;
+    }
+
     public static function defaultJabatan(): string
     {
         return function_exists('config') ? (string)config('pmp.default_jabatan', '08') : '08';

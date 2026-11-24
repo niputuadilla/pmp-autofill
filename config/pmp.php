@@ -18,6 +18,10 @@ return [
         ],
     ],
 
+    // Kolom yang DIKOSONGKAN saat NIK tidak terbaca di APR dan baru diisi dari Dukcapil setelah user mengisi NIK.
+    // Kolom yang tidak ada di Dukcapil (nama dari APR, kontak, pekerjaan/jabatan/penghasilan) tetap dari APR.
+    'hold_without_nik' => ['kelamin', 'tgl_lhr', 'kota_lhr', 'kota_ktp', 'ibu_kandung', 'sts_kawin', 'alamat1', 'alamat2', 'kodepos'],
+
     'branch_code' => env('PMP_BRANCH_CODE', '12703'),
     'branch_name' => env('PMP_BRANCH_NAME', 'Cabang Contoh (isi di .env)'),
     'nationality' => 'WNI', // template BAOWNITEMPLATE khusus WNI

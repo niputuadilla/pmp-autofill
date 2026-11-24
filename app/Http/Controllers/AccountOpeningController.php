@@ -95,6 +95,7 @@ class AccountOpeningController extends Controller
         foreach ($uncertainCols as $col) {
             $row['_warnings'][$col] = 'Tulisan sulit dibaca, cek dengan PDF';
         }
+        ApMapper::holdWithoutNik($row); // NIK tidak terbaca: hanya nama (dan data khas APR) yang diisi dulu
         $r = $enricher->process($row, $uncertainCols);
 
         return response()->json([
