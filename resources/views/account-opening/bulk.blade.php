@@ -40,8 +40,9 @@
         <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin:6px 0 10px;font-size:13px">
             <label style="display:flex;gap:6px;align-items:center"><input type="radio" value="single" x-model="mode"> 1 APR per file</label>
             <label style="display:flex;gap:6px;align-items:center"><input type="radio" value="merged" x-model="mode"> Gabungan: 1 PDF berisi banyak APR</label>
-            <label x-show="mode === 'merged'" style="display:flex;gap:6px;align-items:center">Halaman per APR
+            <label x-show="mode === 'merged'" style="display:flex;gap:6px;align-items:center">Jumlah halaman <b>per 1 APR</b> (bukan jumlah APR)
                 <input type="number" min="1" max="20" x-model.number="pagesPer" style="width:64px;padding:4px 6px"></label>
+            <span x-show="mode === 'merged' && (pagesPer > 20 || pagesPer < 1)" style="color:var(--err);font-size:12px">Isi 1 sampai 20. Contoh: tiap nasabah 2 halaman, isi 2.</span>
         </div>
 
         <div class="dz" :class="{over: dragOver}"
@@ -357,7 +358,12 @@ function bulkApp(cfg) {
 
         // Pisahkan 1 PDF gabungan menjadi PDF per APR (di browser, pakai pdf-lib), lalu masukkan ke antrean baca.
         async splitMerged(f) {
-            const per = Math.max(1, Math.min(20, parseInt(this.pagesPer) || 1));
+            const asked = parseInt(this.pagesPer) || 1;
+            if (asked < 1 || asked > 20) {
+                this.files.push({ id: ++uid, file: null, name: f.name, size: f.size, status: 'fail', msg: 'Halaman per APR harus 1 sampai 20 (kamu mengisi ' + asked + '). Isi jumlah halaman untuk SATU nasabah, bukan jumlah APR.' });
+                return;
+            }
+            const per = asked;
             const sp = { id: ++uid, name: f.name, done: 0, total: 0, note: '' };
             this.splits.push(sp);
             const base = f.name.replace(/\.pdf$/i, '');
@@ -366,7 +372,8 @@ function bulkApp(cfg) {
                 const src = await PDFLib.PDFDocument.load(new Uint8Array(await f.arrayBuffer()), { ignoreEncryption: true });
                 const pages = src.getPageCount();
                 sp.total = Math.ceil(pages / per);
-                if (pages % per) sp.note = pages + ' halaman tidak habis dibagi ' + per + ', APR terakhir hanya ' + (pages % per) + ' halaman';
+                sp.note = pages + ' halaman / ' + per + ' per APR = ' + sp.total + ' APR';
+                if (pages % per) sp.note += '. Tidak habis dibagi, APR terakhir hanya ' + (pages % per) + ' halaman';
                 const pad = Math.max(3, String(sp.total).length);
                 for (let i = 0; i < sp.total; i++) {
                     const idx = [];
