@@ -34,7 +34,15 @@
     {{-- 1. UPLOAD --}}
     <div class="card">
         <h2>1. Upload Dokumen APR Nasabah</h2>
-        <p class="hint">Satu PDF = satu nasabah (boleh lebih dari satu halaman). Pilih banyak file sekaligus. PDF, maksimal 5MB per file.</p>
+        <p class="hint" x-show="mode === 'single'">Satu PDF = satu nasabah (boleh lebih dari satu halaman). Pilih banyak file sekaligus. PDF, maksimal 5MB per file.</p>
+        <p class="hint" x-show="mode === 'merged'">Satu PDF berisi banyak APR. Sistem memisahkannya di browser (file besar tidak dikirim utuh), tiap APR menjadi satu baris dan satu PDF sendiri, lalu diberi nama sesuai nama nasabah. Maksimal 5MB per APR.</p>
+
+        <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin:6px 0 10px;font-size:13px">
+            <label style="display:flex;gap:6px;align-items:center"><input type="radio" value="single" x-model="mode"> 1 APR per file</label>
+            <label style="display:flex;gap:6px;align-items:center"><input type="radio" value="merged" x-model="mode"> Gabungan: 1 PDF berisi banyak APR</label>
+            <label x-show="mode === 'merged'" style="display:flex;gap:6px;align-items:center">Halaman per APR
+                <input type="number" min="1" max="20" x-model.number="pagesPer" style="width:64px;padding:4px 6px"></label>
+        </div>
 
         <div class="dz" :class="{over: dragOver}"
              @click="$refs.picker.click()"
@@ -46,6 +54,11 @@
             <input type="file" accept="application/pdf" multiple x-ref="picker" style="display:none"
                    @change="addFiles($event.target.files); $event.target.value = ''">
         </div>
+
+        <template x-for="sp in splits" :key="sp.id">
+            <div class="legend" style="margin-top:10px"><span>&#9986; Memisahkan <b x-text="sp.name"></b>: <b x-text="sp.done"></b> / <span x-text="sp.total || '?'"></span> APR</span>
+                <span x-show="sp.note" style="color:var(--warn)" x-text="sp.note"></span></div>
+        </template>
 
         <template x-if="files.length">
             <div>
@@ -229,18 +242,20 @@
 @endsection
 
 @push('scripts')
+<script src="{{ asset('js/pdf-lib.min.js') }}"></script>
 <script>
 function bulkApp(cfg) {
     let uid = 0;
     const csrf = document.querySelector('meta[name="csrf-token"]').content;
     return {
         cfg, files: [], rows: [], dragOver: false, running: 0, MAX_PARALLEL: 2,
+        mode: 'single', pagesPer: 2, splits: [],
         mitra: { id: '', name: '', pipeline_id: '', kode_produk: '', biaya_tabungan: '', status_kerjasama: '', status_benefit: '', sektor: '' },
         consent: { aplikasi_pesan: false, panggilan_suara: false, sms: false, email: false },
         agree: false, submitting: false, serverMsg: '',
         filter: 'all', colFilter: '', pinned: {}, fixValue: '', fixing: false, lastKey: '', lastIdx: -1,
 
-        get busy() { return this.files.some(f => f.status === 'queue' || f.status === 'processing'); },
+        get busy() { return this.splits.length > 0 || this.files.some(f => f.status === 'queue' || f.status === 'processing'); },
         get doneCount() { return this.files.filter(f => f.status === 'done').length; },
         get failCount() { return this.files.filter(f => f.status === 'fail').length; },
         get progress() { return this.files.length ? Math.round((this.doneCount + this.failCount) / this.files.length * 100) : 0; },
@@ -327,12 +342,48 @@ function bulkApp(cfg) {
 
         addFiles(list) {
             for (const f of Array.from(list)) {
-                const item = { id: ++uid, file: f, name: f.name, size: f.size, status: 'queue', msg: '' };
-                if (!/\.pdf$/i.test(f.name) && f.type !== 'application/pdf') { item.status = 'fail'; item.msg = 'bukan PDF'; }
-                else if (f.size > 5 * 1024 * 1024) { item.status = 'fail'; item.msg = 'lebih dari 5MB'; }
-                this.files.push(item);
+                const isPdf = /\.pdf$/i.test(f.name) || f.type === 'application/pdf';
+                if (this.mode === 'merged' && isPdf) this.splitMerged(f);
+                else this.addOne(f);
             }
+        },
+        addOne(f) {
+            const item = { id: ++uid, file: f, name: f.name, size: f.size, status: 'queue', msg: '' };
+            if (!/\.pdf$/i.test(f.name) && f.type !== 'application/pdf') { item.status = 'fail'; item.msg = 'bukan PDF'; }
+            else if (f.size > 5 * 1024 * 1024) { item.status = 'fail'; item.msg = 'lebih dari 5MB'; }
+            this.files.push(item);
             this.pump();
+        },
+
+        // Pisahkan 1 PDF gabungan menjadi PDF per APR (di browser, pakai pdf-lib), lalu masukkan ke antrean baca.
+        async splitMerged(f) {
+            const per = Math.max(1, Math.min(20, parseInt(this.pagesPer) || 1));
+            const sp = { id: ++uid, name: f.name, done: 0, total: 0, note: '' };
+            this.splits.push(sp);
+            const base = f.name.replace(/\.pdf$/i, '');
+            try {
+                if (!window.PDFLib) throw new Error('pdf-lib belum termuat');
+                const src = await PDFLib.PDFDocument.load(new Uint8Array(await f.arrayBuffer()), { ignoreEncryption: true });
+                const pages = src.getPageCount();
+                sp.total = Math.ceil(pages / per);
+                if (pages % per) sp.note = pages + ' halaman tidak habis dibagi ' + per + ', APR terakhir hanya ' + (pages % per) + ' halaman';
+                const pad = Math.max(3, String(sp.total).length);
+                for (let i = 0; i < sp.total; i++) {
+                    const idx = [];
+                    for (let p = i * per; p < Math.min(pages, (i + 1) * per); p++) idx.push(p);
+                    const out = await PDFLib.PDFDocument.create();
+                    (await out.copyPages(src, idx)).forEach(pg => out.addPage(pg));
+                    const bytes = await out.save();
+                    const name = base + '_' + String(i + 1).padStart(pad, '0') + '.pdf';
+                    this.addOne(new File([bytes], name, { type: 'application/pdf' }));
+                    sp.done = i + 1;
+                    await new Promise(r => setTimeout(r, 0)); // beri napas ke UI
+                }
+            } catch (e) {
+                this.files.push({ id: ++uid, file: null, name: f.name, size: f.size, status: 'fail', msg: 'gagal dipisah: ' + e.message });
+            } finally {
+                this.splits = this.splits.filter(x => x.id !== sp.id);
+            }
         },
         clearFiles() { this.files = []; },
 

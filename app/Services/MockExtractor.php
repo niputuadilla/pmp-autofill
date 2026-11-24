@@ -24,8 +24,13 @@ class MockExtractor implements ApExtractor
 
         if (!isset($labels[$base])) {
             $keys = array_keys($labels);
-            $n = (int)preg_replace('/\D/', '', $base) ?: random_int(1, 9999);
-            $base = $keys[$n % count($keys)];
+            if (preg_match('/_(\d+)$/', $base, $m)) {
+                // hasil pemisahan PDF gabungan (nama_001.pdf, nama_002.pdf, ...): urutan ke-N = label ke-N (hanya untuk demo mock)
+                $base = $keys[((int)$m[1] - 1) % count($keys)];
+            } else {
+                $n = (int)preg_replace('/\D/', '', $base) ?: random_int(1, 9999);
+                $base = $keys[$n % count($keys)];
+            }
         }
         return $this->fromLabel($labels[$base]);
     }

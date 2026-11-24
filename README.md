@@ -80,3 +80,7 @@ Alur: Upload APR -> cek/koreksi tabel -> Submit -> request berstatus **Menunggu 
 
 ## NIK tidak terbaca (2026-11-24)
 Jika NIK di APR tidak terbaca/tidak 16 digit, tabel hanya mengisi **nama** dan data khas APR (kontak, pekerjaan, jabatan, penghasilan). Kolom yang bisa dilengkapi Dukcapil (`pmp.hold_without_nik` di `config/pmp.php`: kelamin, tgl lahir, kota lahir, kota KTP, ibu kandung, status kawin, alamat, RT/RW, kode pos) dikosongkan dengan keterangan "Menunggu NIK". Setelah user mengisi NIK, kolom itu terisi dari Dukcapil. Ubah daftar kolomnya di config bila perlu.
+
+## Upload 1 PDF berisi banyak APR (2026-11-24)
+Di langkah 1 pilih **Gabungan: 1 PDF berisi banyak APR**, isi **Halaman per APR** (mis. 2 bila tiap nasabah 2 halaman), lalu pilih PDF-nya. PDF dipisah di browser memakai `public/js/pdf-lib.min.js` (pdf-lib, lisensi MIT), jadi file besar tidak dikirim utuh ke server. Tiap APR menjadi satu baris tabel dan satu PDF sendiri, lalu diberi nama sesuai nama nasabah yang terbaca (`NAMA.pdf`; bila nama tidak terbaca, nama file sementara `<nama file>_001.pdf`).
+Syarat: tiap APR harus punya jumlah halaman yang sama (pembagian tetap, belum deteksi otomatis), dan maksimal 5MB per APR. Di mode `mock`, PDF hasil pisah `*_NNN.pdf` dipetakan ke label ke-NNN, jadi untuk demo gunakan `gabungan_200_APR.pdf` dari paket dummy.
